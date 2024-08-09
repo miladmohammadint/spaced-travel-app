@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:spaced_trip_scheduler/constants.dart';
 import 'package:spaced_trip_scheduler/pages/authentication_page.dart';
-import 'package:spaced_trip_scheduler/pages/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,15 +29,14 @@ class _MyAppState extends State<MyApp> {
         appBarTheme: const AppBarTheme(
           elevation: 0,
           backgroundColor: Colors.transparent,
-          textTheme: TextTheme(
-            headline6: TextStyle(
-              fontSize: 28,
-              fontWeight: FontWeight.bold,
-            ),
+          titleTextStyle: TextStyle(
+            fontSize: 28,
+            fontWeight: FontWeight.bold,
+            color: Colors.white, // Add color to ensure the text is visible
           ),
         ),
         textTheme: const TextTheme(
-          bodyText2: TextStyle(
+          bodyMedium: TextStyle(
             color: Colors.white,
             fontSize: 18,
             fontFamily: 'SFProText',
@@ -47,11 +44,10 @@ class _MyAppState extends State<MyApp> {
         ),
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(
-            primary: kPrimaryColor, // This is a custom color variable
+            foregroundColor: kPrimaryColor, // Use foregroundColor instead of primary
           ),
         ),
       ),
-      // home: const Calendar(),
       home: const AuthenticationPage(),
     );
   }

@@ -61,7 +61,7 @@ class ButtonFillTransition extends StatelessWidget {
                 child: child,
                 builder: (BuildContext context, Widget? child) {
                   return ClipRRect(
-                    borderRadius: borderTween.evaluate(positionAnimation),
+                    borderRadius: borderTween.evaluate(positionAnimation) ?? BorderRadius.zero, // Ensure non-null value
                     clipBehavior: Clip.antiAlias,
                     child: Stack(
                       children: <Widget>[
